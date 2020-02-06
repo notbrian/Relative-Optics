@@ -17,7 +17,8 @@ public class moveRig : MonoBehaviour
     {
         Video = GetComponent<UnityEngine.Video.VideoPlayer>();
         // Debug.Log("/" + Video.clip.originalPath + "/");
-        Debug.Log(material.GetColor("_BaseColor"));
+        Debug.Log(Video.url);
+        // Debug.Log(material.GetColor("_BaseColor"));
         material.SetColor("_BaseColor", Color.white);
         Video.loopPointReached += EndReached;
         // Debug.Log(bloom.GetComponent<Volume>());
@@ -33,12 +34,27 @@ public class moveRig : MonoBehaviour
                 material.SetColor("_BaseColor", t.CurrentValue);
             };
           Debug.Log("Ended");
-          if(vp.clip.originalPath == "Assets/Moving through the hallway.MP4") {
+          if(vp.url == "Assets/Vidoes/Moving through the hallway.MP4") {
             Debug.Log("Move Rig");
             XRig.transform.position = new Vector3(0f,0f,-19.5f);
-            // Circle.gameObject.Tween("ColorCircle", spriteRenderer.color, endColor, 1.0f, TweenScaleFunctions.QuadraticEaseOut, updateColor);
-            TweenFactory.Tween("Base Map",  new Color(1f, 1f, 1f, 1f), new Color(1f, 1f, 1f, 0f), 1.0f, TweenScaleFunctions.QuadraticEaseOut, updateColor);
           }
+
+          if(vp.url == "Assets/Vidoes/Game Over Left.MP4") {
+            Debug.Log("Move Rig");
+            XRig.transform.position = new Vector3(9f,0f,-22.5f);
+          }
+
+          if(vp.url == "Assets/Vidoes/Going right win.MP4") {
+            Debug.Log("Move Rig");
+            XRig.transform.position = new Vector3(-14.5f,0f,-22.5f);
+          }
+
+          if(vp.url == "Assets/Vidoes/Security Cam.MP4") {
+            Debug.Log("Move Rig");
+            XRig.transform.position = new Vector3(0f,0f,-19.5f);
+          }
+
+          TweenFactory.Tween("Base Map",  new Color(1f, 1f, 1f, 1f), new Color(1f, 1f, 1f, 0f), 1.0f, TweenScaleFunctions.QuadraticEaseOut, updateColor);
       }
 
   
