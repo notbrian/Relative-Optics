@@ -18,7 +18,7 @@ public class moveRig : MonoBehaviour
         Video = GetComponent<UnityEngine.Video.VideoPlayer>();
         // Debug.Log("/" + Video.clip.originalPath + "/");
         Debug.Log(material.GetColor("_BaseColor"));
-        material.SetColor("_BaseColor", Color.black);
+        material.SetColor("_BaseColor", Color.white);
         Video.loopPointReached += EndReached;
         // Debug.Log(bloom.GetComponent<Volume>());
     }
