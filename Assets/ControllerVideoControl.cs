@@ -6,19 +6,23 @@ using UnityEngine.XR;
 
 public class ControllerVideoControl : MonoBehaviour
 {
-
     public InputDevice LeftController;
     public InputDevice RightController;
+
+    private DigitalRuby.Tween.MasterVideoController masterV;
+
 
     // Start is called before the first frame update
     void Start()
     {
+        masterV = GetComponent<DigitalRuby.Tween.MasterVideoController>();
         var inputDevices = new List<InputDevice>();
         InputDevices.GetDevices(inputDevices);
+        masterV.playVideo("left");
 
         foreach (var device in inputDevices)
         {
-            if (device.characteristics.HasFlag(InputDeviceCharacteristics.Controller | InputDeviceCharacteristics.Left)) 
+            if (device.characteristics.HasFlag(InputDeviceCharacteristics.Controller | InputDeviceCharacteristics.Left))
             {
                 Debug.Log("Found Left Controller");
                 LeftController = device;
@@ -29,6 +33,7 @@ public class ControllerVideoControl : MonoBehaviour
                 Debug.Log("Found Right Controller");
                 RightController = device;
             }
+
             //Debug.Log(string.Format("Device found with name '{0}' and role '{1}'", device.name, deviceChar.ToString()));
         }
     }
@@ -36,19 +41,21 @@ public class ControllerVideoControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector2 axisValues;
-        RightController.TryGetFeatureValue(CommonUsages.primary2DAxis, out axisValues);
 
-        bool leftXButton;
-        LeftController.TryGetFeatureValue(CommonUsages.primaryButton, out leftXButton);
-        if(leftXButton) {
+        Vector2 RightJoystick;
+        bool RightJoystickTouch;
+        bool RightTriggerBool;
 
-        Debug.Log(leftXButton);
+        RightController.TryGetFeatureValue(UnityEngine.XR.CommonUsages.primary2DAxisTouch, out RightJoystickTouch);
+        RightController.TryGetFeatureValue(UnityEngine.XR.CommonUsages.primary2DAxis, out RightJoystick);
+        RightController.TryGetFeatureValue(UnityEngine.XR.CommonUsages.primaryButton, out RightTriggerBool);
+
+        if (RightJoystickTouch)
+        {
+            Debug.Log(RightJoystick);
         }
-        bool triggerValue;
-if (LeftController.TryGetFeatureValue(UnityEngine.XR.CommonUsages.triggerButton, out triggerValue) && triggerValue)
-{
-    Debug.Log("Trigger button is pressed.");
-}
+
+
+
     }
 }
