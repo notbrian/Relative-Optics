@@ -65,6 +65,14 @@ namespace DigitalRuby.Tween
                 XRig.transform.position = new Vector3(0f, 0f, -19.5f);
             }
 
+            if (action == "start")
+            {
+                TweenFactory.Tween("Base Map", new Color(1f, 1f, 1f, 0f), new Color(1f, 1f, 1f, 1f), 1.0f, TweenScaleFunctions.QuadraticEaseOut, updateColor);
+                material.SetColor("_BaseColor", Color.white);
+                Video.url = "Assets/Vidoes/Moving through the hallway.MP4";
+                XRig.transform.position = new Vector3(0f, 0f, 0f);
+            }
+
         }
 
         // Update is called once per frame

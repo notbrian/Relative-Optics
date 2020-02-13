@@ -18,7 +18,6 @@ public class ControllerVideoControl : MonoBehaviour
         masterV = GetComponent<DigitalRuby.Tween.MasterVideoController>();
         var inputDevices = new List<InputDevice>();
         InputDevices.GetDevices(inputDevices);
-        masterV.playVideo("left");
 
         foreach (var device in inputDevices)
         {
@@ -48,11 +47,32 @@ public class ControllerVideoControl : MonoBehaviour
 
         RightController.TryGetFeatureValue(UnityEngine.XR.CommonUsages.primary2DAxisTouch, out RightJoystickTouch);
         RightController.TryGetFeatureValue(UnityEngine.XR.CommonUsages.primary2DAxis, out RightJoystick);
-        RightController.TryGetFeatureValue(UnityEngine.XR.CommonUsages.primaryButton, out RightTriggerBool);
+        RightController.TryGetFeatureValue(UnityEngine.XR.CommonUsages.triggerButton, out RightTriggerBool);
 
-        if (RightJoystickTouch)
+        if (RightJoystick.x > 0.8)
         {
-            Debug.Log(RightJoystick);
+            masterV.playVideo("right");
+        }
+
+        if (RightJoystick.x < -0.8)
+        {
+            masterV.playVideo("left");
+        }
+
+        if (RightJoystick.y < -0.8)
+        {
+            masterV.playVideo("return");
+        }
+
+        if (RightJoystick.y > 0.8)
+        {
+            masterV.playVideo("security");
+        }
+
+        if (RightTriggerBool)
+        {
+            masterV.playVideo("start");
+
         }
 
 
