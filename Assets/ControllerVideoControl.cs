@@ -51,6 +51,7 @@ public class ControllerVideoControl : MonoBehaviour
 
         if (RightJoystick.x > 0.8)
         {
+
             masterV.playVideo("right");
         }
 
@@ -71,7 +72,9 @@ public class ControllerVideoControl : MonoBehaviour
 
         if (RightTriggerBool)
         {
-            masterV.playVideo("start");
+
+            Debug.Log("YOOOOOOO");
+            // masterV.playVideo("start");
 
         }
 
