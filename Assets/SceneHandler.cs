@@ -4,10 +4,11 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using Valve.VR.Extras;
-
+using Fungus;
 public class SceneHandler : MonoBehaviour
 {
     public SteamVR_LaserPointer laserPointer;
+    public Flowchart flowchart;
 
     void Awake()
     {
@@ -23,9 +24,11 @@ public class SceneHandler : MonoBehaviour
         {
             Debug.Log("Cube was clicked");
         }
-        else if (e.target.name == "Button")
+        else if (e.target.name == "Button_Security")
         {
             Debug.Log("Button was clicked");
+            flowchart.ExecuteBlock("Main Hallway Security Cam");
+
         }
     }
 
