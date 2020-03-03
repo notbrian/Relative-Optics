@@ -30,6 +30,13 @@ public class SceneHandler : MonoBehaviour
             flowchart.ExecuteBlock("Main Hallway Security Cam");
 
         }
+
+        else if (e.target.name == "Button_Left")
+        {
+            Debug.Log("Button was clicked");
+            flowchart.ExecuteBlock("Main Hallway Gameover");
+
+        }
     }
 
     public void PointerInside(object sender, PointerEventArgs e)
