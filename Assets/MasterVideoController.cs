@@ -39,7 +39,7 @@ namespace DigitalRuby.Tween
             {
                 TweenFactory.Tween("Base Map", new Color(1f, 1f, 1f, 0f), new Color(1f, 1f, 1f, 1f), 1.0f, TweenScaleFunctions.QuadraticEaseOut, updateColor);
                 // material.SetColor("_BaseColor", Color.white);
-                Video.url = "Assets/Vidoes/Game Over Left.MP4";
+                Video.url = "Assets/Videos/Game Over Left.MP4";
                 XRig.transform.position = new Vector3(0f, 0f, 0f);
             }
 
@@ -47,7 +47,7 @@ namespace DigitalRuby.Tween
             {
                 TweenFactory.Tween("Base Map", new Color(1f, 1f, 1f, 0f), new Color(1f, 1f, 1f, 1f), 1.0f, TweenScaleFunctions.QuadraticEaseOut, updateColor);
                 material.SetColor("_BaseColor", Color.white);
-                Video.url = "Assets/Vidoes/Going right win.MP4";
+                Video.url = "Assets/Videos/Going right win.MP4";
                 XRig.transform.position = new Vector3(0f, 0f, 0f);
             }
 
@@ -55,7 +55,7 @@ namespace DigitalRuby.Tween
             {
                 TweenFactory.Tween("Base Map", new Color(1f, 1f, 1f, 0f), new Color(1f, 1f, 1f, 1f), 1.0f, TweenScaleFunctions.QuadraticEaseOut, updateColor);
                 material.SetColor("_BaseColor", Color.white);
-                Video.url = "Assets/Vidoes/Security Cam.MP4";
+                Video.url = "Assets/Videos/Security Cam.MP4";
                 XRig.transform.position = new Vector3(0f, 0f, 0f);
             }
 
@@ -69,7 +69,7 @@ namespace DigitalRuby.Tween
             {
                 TweenFactory.Tween("Base Map", new Color(1f, 1f, 1f, 0f), new Color(1f, 1f, 1f, 1f), 1.0f, TweenScaleFunctions.QuadraticEaseOut, updateColor);
                 material.SetColor("_BaseColor", Color.white);
-                Video.url = "Assets/Vidoes/Moving through the hallway.MP4";
+                Video.url = "Assets/Videos/Moving through the hallway.MP4";
                 XRig.transform.position = new Vector3(0f, 0f, 0f);
             }
 
