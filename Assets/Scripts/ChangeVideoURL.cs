@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.IO;
 
 public class ChangeVideoURL : MonoBehaviour
 {
@@ -21,6 +22,6 @@ public class ChangeVideoURL : MonoBehaviour
 
     public void changeVideoURL(string URL)
     {
-        VideoP.url = URL;
+        VideoP.url = Path.Combine(Application.streamingAssetsPath, URL);
     }
 }
